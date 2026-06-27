@@ -3,9 +3,10 @@
    Frontend logic: messaging, rule-based
    responses, emotion badges, escalation.
 
-   NOTE: Replace getResponse() with a fetch()
-   call to your Flask /chat endpoint once the
-   backend (Member B) is ready.
+   NOTE: Replace the local response simulation with a POST
+   call to your Flask `/chat` route. That route should load and
+   run your local model, returning JSON with response text,
+   emotion classification, and escalation status.
 ───────────────────────────────────────── */
 
 // ── DOM References ──
@@ -284,7 +285,7 @@ function sendMessage() {
     }
   }, delay);
 
-  /* ── FLASK INTEGRATION (uncomment when backend is ready) ──
+  /* ── FLASK MODEL INTEGRATION (uncomment when backend model is ready) ──
   fetch('/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

@@ -73,21 +73,27 @@ Open either file directly in your browser:
 
 ## How to Connect to Flask Backend (Week 2+)
 
+This frontend is designed to work with a Flask backend that runs your own local model directly. The chatbot should send user messages to a Flask route such as `/chat`, and the backend route should run your model to produce the response, emotion label, and escalation flag.
+
 **For chat.js:**
-Find this comment block and uncomment it, removing the `setTimeout` simulation above it:
-```js
-/* ── FLASK INTEGRATION (uncomment when backend is ready) ── */
-fetch('/chat', { ... })
+- Remove the simulated response block in `sendMessage()`.
+- Uncomment the `fetch('/chat', ...)` block and keep it pointed at your Flask route.
+- The backend should return JSON like:
+```json
+{
+  "response": "...",
+  "emotion": "negative" | "neutral",
+  "escalate": true | false
+}
 ```
+- This is a local model integration, not an external API call.
 
 **For dashboard.js:**
-Find this comment block and uncomment it:
-```js
-/* ── FLASK INTEGRATION (uncomment when backend is ready) ── */
-async function loadInquiries() { ... }
-```
+- The frontend currently uses localStorage for settings, inquiries, and appointments.
+- When the backend is ready, replace these local helpers with Flask endpoints such as `/api/settings`, `/api/appointments`, and `/api/inquiries`.
+- Use the Flask backend to persist dashboard state and load data from your server-side model and storage.
 
-Both expect Flask to serve `templates/` via `render_template()` and `static/` via Flask's default static folder — so when Member B sets up `app.py`, this folder can be dropped directly into the Flask project root.
+Both expect Flask to serve `templates/` via `render_template()` and `static/` via Flask's default static folder. When Member B sets up `app.py`, this folder can be dropped directly into the Flask project root.
 
 ## Color Theme (HAU Brand)
 | Name         | Hex       | Use                          |

@@ -6,6 +6,15 @@ if (window.requireAuth) {
   window.location.replace(window.getLoginUrl ? window.getLoginUrl() : 'login.html');
 }
 
+/* ── BACKEND INTEGRATION NOTES ──
+   The dashboard currently uses localStorage for settings,
+   appointments, and sample inquiry data.
+   When your Flask backend is ready, replace these helpers with
+   `/api/settings`, `/api/appointments`, and `/api/inquiries`
+   endpoints so the server can persist the data and provide
+   model-driven classification where needed.
+*/
+
 const sampleInquiries = [
   { student: 'Maria Santos', studentId: '2023-10234', email: 'maria.santos@hau.edu.ph', message: "I feel so overwhelmed and I don't know who else to talk to about this.", category: 'Counseling', status: 'negative', time: '7:42 AM' },
   { student: 'John Dela Cruz', studentId: '2022-05621', email: 'john.delacruz@hau.edu.ph', message: 'What are your office hours during the semestral break?', category: 'General Info', status: 'neutral', time: '8:15 AM' },
