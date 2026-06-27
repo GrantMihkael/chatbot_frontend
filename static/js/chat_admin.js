@@ -46,9 +46,11 @@ function setCaseDetails(caseInfo) {
 }
 
 function appendMessage(content, from = 'staff') {
+  const isStaff = from === 'staff';
   const row = document.createElement('div');
-  row.className = `msg-row ${from === 'staff' ? 'user' : 'bot'}`;
+  row.className = `msg-row ${isStaff ? 'user' : 'bot'}`;
   row.innerHTML = `
+    <div class="avatar">${isStaff ? 'S' : 'U'}</div>
     <div class="bubble-wrap">
       <div class="bubble">${escapeHtml(content)}</div>
       <span class="bubble-time">${getTime()}</span>

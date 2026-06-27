@@ -257,6 +257,29 @@
 /* ── ADMIN TAKEOVER PAGE ── */
 .admin-chat-page {
   max-width: 840px;
+  position: relative;
+}
+
+.admin-chat-page .chat-area {
+  flex: 1;
+  padding-bottom: 170px;
+}
+
+.admin-chat-page .quick-replies {
+  position: sticky;
+  bottom: 74px;
+  z-index: 12;
+  background: var(--white);
+  padding-top: 10px;
+}
+
+.admin-input-bar {
+  padding: 12px 16px 18px;
+  position: sticky;
+  bottom: 0;
+  z-index: 15;
+  background: var(--white);
+  box-shadow: 0 -8px 20px rgba(0,0,0,0.08);
 }
 
 .takeover-summary {
@@ -395,7 +418,8 @@
   transition: border-color 0.2s;
 }
 .input-wrap:focus-within { border-color: var(--maroon); }
-#msg-input {
+#msg-input,
+#admin-msg-input {
   flex: 1;
   border: none;
   background: transparent;
