@@ -179,40 +179,7 @@ body {
   font-size: 14px;
 }
 
-.role-toggle {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 22px;
-  padding: 6px;
-  background: rgba(240, 237, 237, 0.78);
-  border: 1px solid rgba(221, 216, 216, 0.8);
-  border-radius: 18px;
-}
-
-.role-btn {
-  appearance: none;
-  border: none;
-  border-radius: 13px;
-  padding: 12px 14px;
-  background: transparent;
-  color: var(--gray-700);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.role-btn:hover {
-  transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.55);
-}
-
-.role-btn.active {
-  background: var(--white);
-  color: var(--maroon);
-  box-shadow: 0 10px 24px rgba(123, 17, 19, 0.12);
-}
+/* Role toggle styles removed */
 
 .alert-error {
   display: none;
@@ -440,14 +407,7 @@ body {
     font-size: 1.7rem;
   }
 
-  .role-toggle {
-    gap: 8px;
-  }
-
-  .role-btn {
-    padding: 11px 10px;
-    font-size: 12px;
-  }
+  /* Role toggle styles removed for responsive layout */
 
   .password-wrap {
     gap: 8px;
@@ -473,5 +433,5 @@ body {
   .brand-title { font-size: 1.6rem; }
   .login-form-panel { padding: 12px 10px 16px; }
   .login-form-inner { padding: 20px 14px 18px; border-radius: 20px; }
-  .role-toggle { grid-template-columns: 1fr; }
+  /* Role toggle styles removed for mobile */
 }

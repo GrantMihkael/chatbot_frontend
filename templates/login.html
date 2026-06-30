@@ -27,11 +27,7 @@
       <h2>Welcome back</h2>
       <p class="login-sub">Sign in to continue to the Guidance Chatbot</p>
 
-      <!-- Role Toggle -->
-      <div class="role-toggle" role="group" aria-label="Select account type">
-        <button class="role-btn active" id="role-student" onclick="setRole('student')"> Student</button>
-        <button class="role-btn" id="role-staff" onclick="setRole('staff')"> Staff</button>
-      </div>
+      <!-- Role selection removed -->
       
       <!-- Error Alert -->
       <div class="alert-error" id="login-error">
@@ -79,8 +75,6 @@
 </div>
 
 <script>
-  let currentRole = 'student';
-
   function getAppUrl(page) {
     try {
       const currentUrl = new URL(window.location.href);
@@ -98,14 +92,7 @@
     window.location.replace(getAppUrl(page));
   }
 
-  function setRole(role) {
-    currentRole = role;
-    document.getElementById('role-student').classList.toggle('active', role === 'student');
-    document.getElementById('role-staff').classList.toggle('active', role === 'staff');
-    document.getElementById('email').placeholder = role === 'student'
-      ? 'e.g. student@hau.edu.ph'
-      : 'e.g. staff@hau.edu.ph';
-  }
+  // Role toggle removed — login uses email to determine account type.
 
   function togglePassword() {
     const pw = document.getElementById('password');
