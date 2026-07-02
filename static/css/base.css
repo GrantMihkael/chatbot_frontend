@@ -15,9 +15,9 @@
 
 /* ── SOC ORANGE THEME VARIABLES ── */
 :root {
-  --maroon:        #E67E22;
-  --maroon-dark:   #D35400;
-  --maroon-light:  #F39C12;
+  --orange:        #E67E22;
+  --dark-orange:   #D35400;
+  --light-orange:  #F39C12;
   --gold:          #F4D03F;
   --gold-light:    #F7DC6F;
   --gold-pale:     #FCF3CF;
@@ -59,7 +59,7 @@ html, body {
 a { color: inherit; text-decoration: none; }
 
 /* ── UTILITY CLASSES ── */
-.text-maroon { color: var(--maroon); }
+.text-maroon { color: var(--orange); }
 .text-gray   { color: var(--gray-400); }
 .font-serif  { font-family: 'Playfair Display', serif; }
 
@@ -87,16 +87,16 @@ a { color: inherit; text-decoration: none; }
   transition: background 0.15s, transform 0.1s;
 }
 .btn-primary {
-  background: var(--maroon);
+  background: var(--orange);
   color: var(--white);
 }
-.btn-primary:hover { background: var(--maroon-dark); }
+.btn-primary:hover { background: var(--dark-orange); }
 .btn-outline {
   background: var(--white);
-  color: var(--maroon);
+  color: var(--orange);
   border: 1.5px solid var(--gold);
 }
-.btn-outline:hover { background: var(--maroon); color: var(--white); }
+.btn-outline:hover { background: var(--orange); color: var(--white); }
 
 /* ── SCROLLBAR ── */
 .scrollable::-webkit-scrollbar { width: 4px; }
